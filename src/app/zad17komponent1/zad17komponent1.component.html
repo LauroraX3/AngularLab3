@@ -1,6 +1,19 @@
 <hr>
 <p>Zad 17,18</p>
 <div id="left"></div>
+<div id="left">
+    <p>Zadanie 17 i 18 komponent 1</p>
+    <ul style="list-style-type: none">
+        <li *ngFor="let photo of photos" >
+            <div [ngClass]="isPhotoSelected(photo) ? ClassesCSS:''" (click)="selectedPhoto(photo)">
+            <img [src]="photo" width="100" height="80" >
+            </div>
+        </li>
+    </ul>
+    <button (click)="previousPhoto()">Poprzednie</button>
+    <button (click)="nextPhoto()">Następne</button>
+</div>
 <div id="divBlue">
+
     <app-zad17komponent2></app-zad17komponent2>
 </div>
