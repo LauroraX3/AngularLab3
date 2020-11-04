@@ -6,9 +6,9 @@ import { Link } from 'src/app/komponent2/link';
 })
 export class LinksService {
 
-  LINKS: Link[];
+  links: Link[];
   constructor() {
-    this.LINKS = [
+    this.links = [
       { name: 'Facebook', linkAddres: 'https://www.facebook.com/', opis: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nibh massa. Maecenas fermentum quam quis purus posuere, eu dictum mi finibus. Donec commodo, orci nec facilisis feugiat, arcu tellus posuere nulla, non ullamcorper lectus purus et ipsum.' } as Link,
       { name: 'Youtube', linkAddres: 'https://www.youtube.com/', opis: 'dfsfsfdsfsd sit amet, consectetur adipiscing elit. Donec sed nibh massa. Maecenas fermentum quam quis purus posuere, eu dictum mi finibus. Donec commodo, orci nec facilisis feugiat, arcu tellus posuere nulla, non ullamcorper lectus purus et ipsum.' } as Link,
       { name: 'Linkedin', linkAddres: 'https://www.linkedin.com/', opis: 'ASSASASAt amet, consectetur adipiscing elit. Donec sed nibh massa. Maecenas fermentum quam quis purus posuere, eu dictum mi finibus. Donec commodo, orci nec facilisis feugiat, arcu tellus posuere nulla, non ullamcorper lectus purus et ipsum.'} as Link,
@@ -16,5 +16,18 @@ export class LinksService {
       { name: 'Google', linkAddres: 'https://www.google.pl/', opis: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nibh massa. Maecenas fermentum quam quis purus posuere, eu dictum mi finibus. Donec commodo, orci nec facilisis feugiat, arcu tellus posuere nulla, non ullamcorper lectus purus et ipsum.' } as Link,
       { name: 'Allegro', linkAddres: 'https://allegro.pl/', opis: 'ewrwrwesit amet, consectetur adipiscing elit. Donec sed nibh massa. Maecenas fermentum quam quis purus posuere, eu dictum mi finibus. Donec commodo, orci nec facilisis feugiat, arcu tellus posuere nulla, non ullamcorper lectus purus et ipsum.' } as Link,
     ]
+  }
+
+  getLinksWithSpecificName(name) {
+    return this.links.findIndex(x => x.name == name);
+  }
+
+  changeDescription(name, nowyOpis) {
+    var znalezionyIndxLinku = this.getLinksWithSpecificName(name);
+    if(znalezionyIndxLinku > 0 && znalezionyIndxLinku) {
+      this.links[znalezionyIndxLinku].opis = nowyOpis;
+      return true
+    }
+    return false
   }
 }

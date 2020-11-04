@@ -5,6 +5,8 @@ import {Link} from "./link";
 import {DataStringZad15Service} from "../../../dataStringZad15.service";
 import {DataBooleanZad16Service} from "../../../dataBooleanZad16.service";
 import $ from 'jquery';
+import { LinksService } from './links.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-zad2124komponent1',
@@ -14,7 +16,6 @@ import $ from 'jquery';
 export class Zad2124komponent1Component implements OnInit {
 
   isOn: boolean = false;
-  links = LINKS;
   selectedLink: Link;
 
   name: string;
@@ -23,17 +24,24 @@ export class Zad2124komponent1Component implements OnInit {
 
   zmienOpis: string;
 
-  constructor(private dataStringZad15: DataStringZad15Service, private  dataBooleamZad16: DataBooleanZad16Service) {
+  constructor(
+    private dataStringZad15: DataStringZad15Service, 
+    private  dataBooleamZad16: DataBooleanZad16Service,
+    public linksService: LinksService,
+    public router: Router) {
   }
 
   ngOnInit(): void {
     this.dataBooleamZad16.currentMessage.subscribe(message => {
       this.dataStringZad15.changeMessageStringZad15("");
       this.isOn = false;
+
+      
       if(message){
-        let index = this.links.indexOf(this.selectedLink);
+        
+        let index = this.linksService.links.indexOf(this.selectedLink);
         if(index != -1){
-          this.links.splice(index, 1);
+          this.linksService.links.splice(index, 1);
         }
       }
     })
@@ -52,7 +60,8 @@ export class Zad2124komponent1Component implements OnInit {
 
   addLink() {
     var newLink = {name: this.name, linkAddres: this.adres, opis: this.opis} as Link;
-    this.links.push(newLink);
+    this.linksService.links.push(newLink);
+    
     $('#addLinkInp').find('input:text').val(''); 
   }
 
@@ -62,16 +71,17 @@ export class Zad2124komponent1Component implements OnInit {
 
   changeDescription() {
     var podanaNazwa = $('#nazwaWpisanegoAdresu').val();
-    var znalezionyIndxLinku = this.links.findIndex(x => x.name == podanaNazwa);
+    
     if(this.name && this.opis && this.adres ) {
       document.getElementById('czyWszystkiePola').textContent = "Jedno z pol jest puste"
     }
-    if(znalezionyIndxLinku > 0 && znalezionyIndxLinku) {
-      this.links[znalezionyIndxLinku].opis = this.zmienOpis;
+    var changeSuccesfull = this.linksService.changeDescription(podanaNazwa, this.zmienOpis);
+    if(changeSuccesfull) {
       document.getElementById('czyOpisZostalZmieniony').textContent = "Opis został zmieniony!"
-      $('#opisForm').find('input:text').val('');  
+      $('#opisForm').find('input:text').val(''); 
       return
     }
+
     $('#opisForm').find('input:text').val(''); 
     document.getElementById('czyOpisZostalZmieniony').textContent = "Opis nie został zmieniony!"
   }

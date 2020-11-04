@@ -22,6 +22,7 @@ import { Component } from '@angular/core';
     <app-zad26Akomponent></app-zad26Akomponent>
     <app-zad26komponent></app-zad26komponent>
     <app-zad30mainkomponent></app-zad30mainkomponent>
+    <h1>Router</h1>
     <router-outlet></router-outlet>
     
     <div id="divRed">
