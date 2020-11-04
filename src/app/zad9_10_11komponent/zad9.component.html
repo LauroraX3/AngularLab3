@@ -1,0 +1,40 @@
+<p>Zadanie 9, 10, 11</p>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+  
+
+    <ng-container matColumnDef="imageUrl">
+        <th mat-header-cell *matHeaderCellDef> ImageUrl </th>
+        <td mat-cell *matCellDef="let element"> <img id={{element.position}}1 (click)="showPhoto($event)" [src]="element.imageUrl" /> </td>
+      </ng-container>
+  
+
+    <ng-container matColumnDef="imageUrl2">
+      <th mat-header-cell *matHeaderCellDef> ImageUrl2 </th>
+      <td mat-cell *matCellDef="let element"> <img id={{element.position}}2 (click)="showPhoto($event)" [src]="element.imageUrl2" /> </td>
+    </ng-container>
+  
+
+    <ng-container matColumnDef="imageUrl3">
+      <th mat-header-cell *matHeaderCellDef> ImageUrl3 </th>
+      <td mat-cell *matCellDef="let element"> <img id={{element.position}}3 (click)="showPhoto($event)" [src]="element.imageUrl3" /> </td>
+    </ng-container>
+  
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <p>Zdjecia:</p>
+  <button id="previouslyBtn" (click)="previouslyPhoto()" type="button">Poprzednie</button>
+  <button id="nextBtn" (click)="nextPhoto()" type="button">Nastepne</button>
+  <p id="showWarningMsg"></p>
+  <div id="pokazZdjecia">
+
+  </div>
+<hr>

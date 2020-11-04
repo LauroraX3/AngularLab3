@@ -1,0 +1,10 @@
+import {Link} from "./link";
+
+export const LINKS: Link[] = [
+    { name: 'Facebook', linkAddres: 'https://www.facebook.com/', opis: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nibh massa. Maecenas fermentum quam quis purus posuere, eu dictum mi finibus. Donec commodo, orci nec facilisis feugiat, arcu tellus posuere nulla, non ullamcorper lectus purus et ipsum.' },
+    { name: 'Youtube', linkAddres: 'https://www.youtube.com/', opis: 'dfsfsfdsfsd sit amet, consectetur adipiscing elit. Donec sed nibh massa. Maecenas fermentum quam quis purus posuere, eu dictum mi finibus. Donec commodo, orci nec facilisis feugiat, arcu tellus posuere nulla, non ullamcorper lectus purus et ipsum.' },
+    { name: 'Linkedin', linkAddres: 'https://www.linkedin.com/', opis: 'ASSASASAt amet, consectetur adipiscing elit. Donec sed nibh massa. Maecenas fermentum quam quis purus posuere, eu dictum mi finibus. Donec commodo, orci nec facilisis feugiat, arcu tellus posuere nulla, non ullamcorper lectus purus et ipsum.'},
+    { name: 'Instagram', linkAddres: 'https://www.instagram.com/', opis: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nibh massa. Maecenas fermentum quam quis purus posuere, eu dictum mi finibus. Donec commodo, orci nec facilisis feugiat, arcu tellus posuere nulla, non ullamcorper lectus purus et ipsum.'},
+    { name: 'Google', linkAddres: 'https://www.google.pl/', opis: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nibh massa. Maecenas fermentum quam quis purus posuere, eu dictum mi finibus. Donec commodo, orci nec facilisis feugiat, arcu tellus posuere nulla, non ullamcorper lectus purus et ipsum.' },
+    { name: 'Allegro', linkAddres: 'https://allegro.pl/', opis: 'ewrwrwesit amet, consectetur adipiscing elit. Donec sed nibh massa. Maecenas fermentum quam quis purus posuere, eu dictum mi finibus. Donec commodo, orci nec facilisis feugiat, arcu tellus posuere nulla, non ullamcorper lectus purus et ipsum.' },
+]

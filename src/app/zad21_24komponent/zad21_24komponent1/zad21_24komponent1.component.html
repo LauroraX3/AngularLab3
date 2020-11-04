@@ -1,0 +1,38 @@
+<p>Zadanie 21-24 - komponent 1 </p>
+<ul class="heroes">
+    <li *ngFor="let link of links"
+        [class.selected]="link === selectedLink"
+        (click)="onSelect(link)">
+        <span class="badge">{{link.name}}</span> {{link.linkAddres}} <span class="usun"><button (click) = "potwierdzUsuniecie(link)">usun</button></span>
+    </li>
+</ul>
+
+<h2>Dodanie nowego linku:</h2>
+<div id="addLinkInp">
+    <label>Wprowadz nazwe: <input [(ngModel)]="name" type="text"></label><br><br>
+    <label>Wprowadz adres: <input [(ngModel)]="adres" type="text"></label><br><br>
+    <label>Wprowadz opis: <input [(ngModel)]="opis" type="text"></label><br><br>
+    
+</div>
+<p id="czyWszystkiePola" style="color: red;"></p>
+
+<button (click)="addLink()" [disabled]="!checkInputs()" type="button">Zapisz</button>
+<button (click)="clear()" type="button">Anuluj</button><br><br>
+
+<h2>Edycja opisu:</h2>
+<div id="opisForm">
+    <label>Wpisz nazwe linku ktorego opis chcesz zmienic: <input id="nazwaWpisanegoAdresu" type="text"></label><br><br>
+    <label>Nowy opis: <input [(ngModel)]="zmienOpis" type="text"></label><br><br>
+</div>
+<p id="czyOpisZostalZmieniony" style="color: red;"></p>
+<button (click)="changeDescription()" type="button">Zmien</button>
+
+
+
+
+
+
+<app-zad2124komponent2></app-zad2124komponent2>
+<app-zad2124komponent3 *ngIf="isOn"></app-zad2124komponent3>
+<hr>
+
