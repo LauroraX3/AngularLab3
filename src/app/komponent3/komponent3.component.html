@@ -1,0 +1,9 @@
+<p>Zadanie 5</p>
+<ul class="heroes">
+    <li *ngFor="let link of links"
+        [class.selected]="selectedLinks.indexOf(link) != -1"
+        (click)="onSelect(link)">
+        <span class="badge">{{link.name}}</span> {{link.linkAddres}}
+    </li>
+</ul>
+<hr>

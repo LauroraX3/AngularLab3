@@ -1,0 +1,28 @@
+<p>Zadanie 1</p>
+<button (click) = "wyswietlImieNazwiskoZad1()"> Kliknij aby wyswietlic imie i nazwisko </button><br>
+<p> {{imieNazwiskoZad1}}</p>
+<hr>
+
+<p>Zadanie 2</p>
+<button (click) = "wyswietlImieNazwiskoZad2()"> Kliknij aby wyswietlic imie i nazwisko </button><br><br>
+<button  (click) = "ustawKlase20px()"> Kliknij aby zmienic czcionke na 20px</button><br><br>
+<button (click) = "ustawKlaseGreenColorAndLineThrough()"> Kliknij aby zmienic kolor na zielony i przekreslic</button><br>
+<p [ngClass]="ClassesCSS"> {{imieNazwiskoZad2}}</p>
+<hr>
+
+<p>Zadanie 3</p>
+<button (click) = "wyswietlImieNazwiskoZad3()"> Kliknij aby wyswietlic imie i nazwisko </button><br><br>
+<button (click) = "ustawKlasyZad3()"> Ustaw obie klasy na raz</button><br>
+<p [ngClass]="ClassesCSS2"> {{imieNazwiskoZad3}}</p>
+<hr>
+
+<p>Zadanie 4</p>
+<button (click) = "wyswietlImieNazwiskoZad4()"> Kliknij aby wyswietlic imie i nazwisko </button><br><br>
+<button (click) = "ustawKlasyZad4()"> Ustaw obie klasy na raz</button><br><br>
+<button (click) = "usunKlasyZad4()"> Usun obie klasy na raz</button><br><br>
+<button (click) = "usunKlase20px()"> Wyłącz klasę 20px</button><br><br>
+<button (click) = "usunKlaseGreenLineThrough()"> Wyłącz klasę green i lineThrough</button><br><br>
+<button (click) = "dodajKlase20px()"> Włącz klasę 20px</button><br><br>
+<button (click) = "dodajKlaseGreenLineThrough()"> Włącz klasę green i lineThrough</button><br>
+<p [ngClass]="ClassesCSS3"> {{imieNazwiskoZad4}}</p>
+<hr>
