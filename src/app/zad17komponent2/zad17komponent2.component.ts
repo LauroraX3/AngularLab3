@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Zad17DataStringService} from "../../zad17dataString.service";
 
 @Component({
   selector: 'app-zad17komponent2',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Zad17komponent2Component implements OnInit {
 
-  constructor() { }
+  receivedPhoto: string;
+
+  constructor( private dataString: Zad17DataStringService) {
+    dataString.currentMessageString.subscribe(photo =>{
+      this.receivedPhoto = photo;
+    })
+  }
 
   ngOnInit(): void {
   }
