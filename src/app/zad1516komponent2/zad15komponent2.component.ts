@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {DataStringService} from "../../dataString.service";
 import {DataStringZad15Service} from "../../dataStringZad15.service";
+import {DataBooleanZad16Service} from "../../dataBooleanZad16.service";
 
 @Component({
   selector: 'app-zad15komponent2',
@@ -11,8 +12,9 @@ import {DataStringZad15Service} from "../../dataStringZad15.service";
 export class Zad15komponent2Component implements OnInit {
 
   opis: string;
+  cosZServisu: boolean;
 
-  constructor(private dataStringZad15: DataStringZad15Service) {
+  constructor(private dataStringZad15: DataStringZad15Service, private  dataBooleamZad16: DataBooleanZad16Service) {
   }
 
   ngOnInit(): void {

@@ -1,0 +1,12 @@
+<p>Zadanie 15 - komponent 1 </p>
+<ul class="heroes">
+    <li *ngFor="let link of links"
+        [class.selected]="link === selectedLink"
+        (click)="onSelect(link)">
+        <span class="badge">{{link.name}}</span> {{link.linkAddres}} <span class="usun"><button (click) = "potwierdzUsuniecie(link)">usun</button></span>
+    </li>
+</ul>
+
+<app-zad15komponent2></app-zad15komponent2>
+<app-zad1516komponent3 *ngIf="isOn" ></app-zad1516komponent3>
+<hr>

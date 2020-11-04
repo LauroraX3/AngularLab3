@@ -12,8 +12,13 @@ import { Component } from '@angular/core';
     <app-zad14komponent1></app-zad14komponent1>
     <app-zad15komponent1></app-zad15komponent1>
     <router-outlet></router-outlet>
+    
+    <div id="divRed">
+      <app-zad17komponent1></app-zad17komponent1>
+    </div>
+    
   `,
-  styles: []
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'Ang1';
